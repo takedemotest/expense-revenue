@@ -35,7 +35,8 @@ jobs:
         run: |
              npm run build -- \
               --configuration production \
-              --base-href /expense-revenue/
+              --base-href /expense-revenue/\
+              --deploy-url /expense-revenue/
 
       - name: Verify build output
         run: |

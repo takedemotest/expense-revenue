@@ -51,6 +51,7 @@
           "builder": "@angular/build:application",
           "options": {
             "outputPath": "dist/expense-revenue-mfe",
+            "baseHref": "/expense-revenue/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
