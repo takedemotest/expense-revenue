@@ -33,7 +33,7 @@ jobs:
 
       - name: Build Angular MFE
         run: |
-            npm run build -- --base-href /expense-revenue/
+          npm run build -- --base-href=/expense-revenue/
 
       - name: Verify build output
         run: |
@@ -44,5 +44,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist/expense-revenue-mfe/browser
+          folder: dist/expense-revenue-mfe
           clean: true

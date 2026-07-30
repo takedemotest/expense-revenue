@@ -50,8 +50,12 @@
         "esbuild": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/expense-revenue-mfe",
+            "outputPath": {
+              "base": "dist/expense-revenue-mfe",
+              "browser": ""
+            },
             "baseHref": "/expense-revenue/",
+            "deployUrl": "/expense-revenue/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",

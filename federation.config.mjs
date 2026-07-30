@@ -3,6 +3,8 @@ import { withNativeFederation, shareAll } from '@angular-architects/native-feder
 export default withNativeFederation({
     name: 'expenseRevenue',
 
+    publicPath: 'https://takedemotest.github.io/expense-revenue/',
+
   exposes: {
     './expenseRevenueModule': './src/app/expense-revenue-component/expense-revenue-component.ts',
   },
