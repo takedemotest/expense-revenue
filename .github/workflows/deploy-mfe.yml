@@ -33,10 +33,7 @@ jobs:
 
       - name: Build Angular MFE
         run: |
-             npm run build -- \
-              --configuration production \
-              --base-href /expense-revenue/\
-              --deploy-url /expense-revenue/
+            npm run build -- --base-href /expense-revenue/
 
       - name: Verify build output
         run: |
