@@ -35,6 +35,11 @@ jobs:
         run: |
           npm run build -- --base-href=/expense-revenue/
 
+      - name: Create .nojekyll File
+        run: |
+          touch dist/expense-revenue-mfe/.nojekyll
+          touch dist/expense-revenue-mfe/browser/.nojekyll || true
+
       - name: Verify build output
         run: |
           echo "Listing build output..."
