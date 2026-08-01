@@ -39,6 +39,15 @@
       "bundle": "browser-angular_platform_browser"
     },
     {
+      "packageName": "@takedemotest/krishito-ui-card",
+      "outFileName": "_takedemotest_krishito_ui_card.Z5LBFCeMx-.js",
+      "requiredVersion": "^0.0.2",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "0.0.2",
+      "bundle": "browser-takedemotest_krishito_ui_card"
+    },
+    {
       "packageName": "@takedemotest/krishito-ui-icons",
       "outFileName": "_takedemotest_krishito_ui_icons.8GK3dqli79.js",
       "requiredVersion": "^1.0.2",
@@ -132,7 +141,7 @@
   "exposes": [
     {
       "key": "./expenseRevenueModule",
-      "outFileName": "expenseRevenueModule-O7YWXHZF.js"
+      "outFileName": "expenseRevenueModule-HIBLJ5KX.js"
     }
   ],
   "chunks": {
