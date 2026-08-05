@@ -4,6 +4,7 @@
     "@angular/common/http": "_angular_common_http.mGpVIg3E-m.js",
     "@angular/material/icon": "_angular_material_icon.HwrPT350N7.js",
     "@angular/platform-browser": "_angular_platform_browser.Vp86iu8QIA.js",
+    "@takedemotest/krishito-ui-ag-grid": "_takedemotest_krishito_ui_ag_grid.NRMkOjFKNP.js",
     "@takedemotest/krishito-ui-card": "_takedemotest_krishito_ui_card.Z5LBFCeMx-.js",
     "@takedemotest/krishito-ui-icons": "_takedemotest_krishito_ui_icons.8GK3dqli79.js",
     "rxjs": "rxjs.AD771FvZRA.js",
