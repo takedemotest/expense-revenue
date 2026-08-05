@@ -1,82 +1,28 @@
-<mat-icon [svgIcon]="'dashboard'"></mat-icon>
+<!-- <mat-icon [svgIcon]="'dashboard'"></mat-icon>
 <mat-icon [svgIcon]="'warning'"></mat-icon>
-<mat-icon [svgIcon]="'addicon'"></mat-icon>
-
-  <div class="action-card-container">
-          <cards type="inline" [config]="taskNotification()">
-          </cards>
-        </div>
-
-
-        <div class="financial-container">
-  <h2>🌾 Farm Expense & Revenue Management</h2>
-
-  <!-- 1. LOADING & ERROR STATES -->
-  @if (loading) {
-    <div class="alert alert-info">Loading farm transactions...</div>
-  } @else if (errorMessage) {
-    <div class="alert alert-danger">{{ errorMessage }}</div>
-  }
-
-  <!-- 2. FINANCIAL SUMMARY CARDS -->
+<mat-icon [svgIcon]="'addicon'"></mat-icon> -->
   @if (summary) {
-    <div class="summary-cards">
-      <div class="card revenue">
-        <h3>Total Revenue</h3>
-        <p>₹{{ summary.totalRevenue }}</p>
-      </div>
-      <div class="card expense">
-        <h3>Total Expense</h3>
-        <p>₹{{ summary.totalExpense }}</p>
-      </div>
-      <div class="card profit">
-        <h3>Net Profit</h3>
-        <p>₹{{ summary.netProfit }}</p>
-      </div>
-      <div class="card margin">
-        <h3>Margin</h3>
-        <p>{{ summary.profitMarginPercent }}</p>
-      </div>
-    </div>
-  }
-
-  <!-- 3. TRANSACTIONS TABLE -->
-  <h3>All Transactions</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Category</th>
-        <th>Amount</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- @for replaces *ngFor and requires a 'track' expression -->
-      @for (item of transactions; track item._id) {
-        <tr>
-          <td>
-            <span [class]="item.type.toLowerCase()">{{ item.type }}</span>
-          </td>
-          <td>{{ item.category }}</td>
-          <td>₹{{ item.amount }}</td>
-          <td>
-            <!-- <button (click)="onDelete(item._id!)" class="btn-delete">Delete</button> -->
-          </td>
-        </tr>
-      } @empty {
-        <!-- Displays automatically when transactions array is empty -->
-        <tr>
-          <td colspan="4" class="text-center">No transactions recorded yet.</td>
-        </tr>
-      }
-    </tbody>
-  </table>
+<div class="action-card-container">
+  <cards type="inline" [config]="expenseRevenue()">
+  </cards>
 </div>
+  }
+<ng-template #expense let-item>
+  <span>₹{{ summary.totalExpense}}</span>
+</ng-template>
 
-<agGrid-ui
-      [config]="gridConfig()"
-      [fetchService]="fetchFn"
-      (actionTriggered)="handleAction($event)">
-    </agGrid-ui>
+<ng-template #revenue let-item>
+  <span>₹{{ summary.totalRevenue }}</span>
+</ng-template>
+
+<ng-template #netProfit let-item>
+  <span>₹{{ summary.netProfit }}</span>
+</ng-template>
+
+<ng-template #profitMarginPercent let-item>
+  <span>{{ summary.profitMarginPercent }}</span>
+</ng-template>
+
+
+<agGrid-ui [config]="gridConfig()" [fetchService]="fetchFn" (actionTriggered)="handleAction($event)">
+</agGrid-ui>

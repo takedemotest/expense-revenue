@@ -2,9 +2,9 @@ import { Component, inject, signal, TemplateRef, ViewChild } from '@angular/core
 import { IconService } from '@takedemotest/krishito-ui-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CardConfig, CardsComponent } from '@takedemotest/krishito-ui-card';
-import { TASK_NOTIFICATION_CONFIG } from './task-notification-config';
 import { Transaction, TransactionService } from '../services/transaction.service';
 import { AgGridUi, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
+import { EXPENSE_REVENUE_CONFIG } from './expens-revenue-config';
 @Component({
   selector: 'expense-revenue',
   standalone:true,
@@ -14,16 +14,17 @@ import { AgGridUi, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
 })
 export class ExpenseRevenueComponent {
   private iconService = inject(IconService);
-  public taskNotification = signal<CardConfig[]>([]);
+  public expenseRevenue = signal<CardConfig[]>([]);
 
   transactions: Transaction[] = [];
   summary: any = null;
   loading = false;
   errorMessage = '';
 
-  @ViewChild('milkProduction') milkProductionTemplate!: TemplateRef<any>;
-  @ViewChild('inventoryAlerts') inventoryAlertsTemplate!: TemplateRef<any>;
-  @ViewChild('upcomingTasks') upcomingTasksTemplate!: TemplateRef<any>; 
+  @ViewChild('expense') expenseTemplate!: TemplateRef<any>;
+  @ViewChild('revenue') revenueTemplate!: TemplateRef<any>;
+  @ViewChild('netProfit') netProfitTemplate!: TemplateRef<any>; 
+  @ViewChild('profitMarginPercent') profitMarginPercentTemplate!: TemplateRef<any>;
 
   constructor(private transactionService: TransactionService) {}
 
@@ -72,7 +73,7 @@ export class ExpenseRevenueComponent {
   // Low-code Config stored as a Signal
   gridConfig = signal<gridConfig>({
     gridId: 'transactions-grid',
-    title: '🌾 Financial Transactions (Signal Low-Code Plugin)',
+    title: 'All financial transactions',
     pageSize: 10,
     columns: [
       { 
@@ -106,12 +107,13 @@ export class ExpenseRevenueComponent {
     
     ngAfterViewInit(){
   
-      const taskNotificationConfig = TASK_NOTIFICATION_CONFIG({
-        milkProduction: this.milkProductionTemplate,
-        inventoryAlerts: this.inventoryAlertsTemplate,
-        upcomingTasks: this.upcomingTasksTemplate
+      const expenseRevenueConfig = EXPENSE_REVENUE_CONFIG({
+        expense: this.expenseTemplate,
+        revenue: this.revenueTemplate,
+        netProfit: this.netProfitTemplate,
+        profitMarginPercent: this.profitMarginPercentTemplate
       });
-      this.taskNotification.set(taskNotificationConfig);
+      this.expenseRevenue.set(expenseRevenueConfig);
     }
 
 }
