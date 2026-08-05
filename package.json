@@ -19,6 +19,7 @@
     "@angular/material": "^21.2.14",
     "@angular/platform-browser": "^22.0.0",
     "@angular/router": "^22.0.0",
+    "@takedemotest/krishito-ui-ag-grid": "^0.0.2",
     "@takedemotest/krishito-ui-card": "^0.0.2",
     "@takedemotest/krishito-ui-icons": "^1.0.2",
     "es-module-shims": "^2.8.0",
