@@ -8,6 +8,8 @@ export interface Transaction {
   amount: number;
   category: string;
   mainActivity: string;
+   title: string;
+   description: string;
   createdAt?: Date;
 }
 
