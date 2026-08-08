@@ -3,12 +3,12 @@ import { IconService } from '@takedemotest/krishito-ui-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CardConfig, CardsComponent } from '@takedemotest/krishito-ui-card';
 import { Transaction, TransactionService } from '../services/transaction.service';
-import { AgGridUi, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
+import { AgGridUiComponent, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
 import { EXPENSE_REVENUE_CONFIG, TRANSACTION_GRID_CONFIG } from './expens-revenue-config';
 @Component({
   selector: 'expense-revenue',
   standalone:true,
-  imports: [MatIconModule, CardsComponent, AgGridUi],
+  imports: [MatIconModule, CardsComponent, AgGridUiComponent],
   templateUrl: './expense-revenue-component.html',
   styleUrl: './expense-revenue-component.scss',
 })
