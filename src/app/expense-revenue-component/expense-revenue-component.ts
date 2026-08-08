@@ -3,12 +3,12 @@ import { IconService } from '@takedemotest/krishito-ui-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CardConfig, CardsComponent } from '@takedemotest/krishito-ui-card';
 import { Transaction, TransactionService } from '../services/transaction.service';
-import { AgGridUi, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
-import { EXPENSE_REVENUE_CONFIG } from './expens-revenue-config';
+import { AgGridUiComponent, gridConfig } from '@takedemotest/krishito-ui-ag-grid';
+import { EXPENSE_REVENUE_CONFIG, TRANSACTION_GRID_CONFIG } from './expens-revenue-config';
 @Component({
   selector: 'expense-revenue',
   standalone:true,
-  imports: [MatIconModule, CardsComponent, AgGridUi],
+  imports: [MatIconModule, CardsComponent, AgGridUiComponent],
   templateUrl: './expense-revenue-component.html',
   styleUrl: './expense-revenue-component.scss',
 })
@@ -29,79 +29,39 @@ export class ExpenseRevenueComponent {
   constructor(private transactionService: TransactionService) {}
 
   ngOnInit(){
-    this.fetchData();
       this.iconService.registerIcons([
-      'dashboard', 'warning'])
+      'dashboard', 'warning']);
+      this.fetchData();
   }
 
-  fetchData() {
-    this.loading = true;
+ 
 
-    // Fetch Transactions List
-    this.transactionService.getTransactions().subscribe({
-      next: (res:any) => {
-        this.transactions = res.data;
-        this.loading = false;
-      },
-      error: (err:any) => {
-        this.errorMessage = 'Failed to load transactions';
-        this.loading = false;
-      }
-    });
+  fetchTransactionData = () => this.transactionService.getTransactions();
 
-    // Fetch Summary Totals
+  fetchData(){
     this.transactionService.getFinancialSummary().subscribe({
-      next: (res:any) => {
-        this.summary = res.data;
-      }
-    });
-  }
-
-  onDelete(id: string): void {
-    if (confirm('Are you sure you want to delete this record?')) {
-      this.transactionService.deleteTransaction(id).subscribe({
-        next: () => {
-          this.fetchData(); // Refresh list after deletion
-        }
-      });
-    }
-  }
-
-
-  fetchFn = () => this.transactionService.getTransactions();
-
-  // Low-code Config stored as a Signal
-  gridConfig = signal<gridConfig>({
-    gridId: 'transactions-grid',
-    title: 'All financial transactions',
-    pageSize: 10,
-    columns: [
-      { 
-        field: 'type', 
-        headerName: 'Type', 
-        type: 'badge',
-        badgeColorMap: {
-          'REVENUE': { bg: '#dcfce7', text: '#15803d' },
-          'EXPENSE': { bg: '#fee2e2', text: '#b91c1c' }
-        }
+      next:(response) => {
+        this.summary = response.data;
       },
-      { field: 'category', headerName: 'Category', type: 'text' },
-      { field: 'amount', headerName: 'Amount', type: 'currency', currencySymbol: '₹' },
-      { field: 'createdAt', headerName: 'Date', type: 'date' },
-      {
-        field: 'actions',
-        headerName: 'Actions',
-        type: 'actions',
-        actions: [{ name: 'delete', label: 'Delete', btnClass: 'btn-danger' }]
+      error:(err) => {
+        this.errorMessage = err?.error?.message || 'Failed to fetch financial summary.';
       }
-    ]
-  });
+    })
+  }
+  
+
+  gridConfig = signal<gridConfig>(TRANSACTION_GRID_CONFIG);
 
   handleAction(event: { actionName: string; rowData: any }): void {
     if (event.actionName === 'delete') {
-      this.transactionService.deleteTransaction(event.rowData._id).subscribe(() => {
-        alert('Transaction deleted!');
-      });
+      this.transactionService.deleteTransaction(event.rowData._id).subscribe({
+        next: () => { 
+              alert('Transaction deleted successfully');
+        },
+        error: (err) => {
+          alert(err?.error?.message || 'Failed to delete transaction.');
+        }
+      })
     }
   }
     

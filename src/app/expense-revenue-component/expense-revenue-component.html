@@ -20,9 +20,9 @@
 </ng-template>
 
 <ng-template #profitMarginPercent let-item>
-  <span>{{ summary.profitMarginPercent }}</span>
+  <span>{{ summary.profitMarginPercentage }}</span>
 </ng-template>
 
 
-<agGrid-ui [config]="gridConfig()" [fetchService]="fetchFn" (actionTriggered)="handleAction($event)">
+<agGrid-ui [config]="gridConfig()" [fetchService]="fetchTransactionData" (actionTriggered)="handleAction($event)">
 </agGrid-ui>
