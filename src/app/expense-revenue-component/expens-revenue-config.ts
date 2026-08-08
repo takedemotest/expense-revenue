@@ -1,6 +1,7 @@
 import { TemplateRef } from '@angular/core';
+import { gridConfig } from '@takedemotest/krishito-ui-ag-grid';
 import { CardConfig } from '@takedemotest/krishito-ui-card';
-import { gridConfig } from '../localtest/krishito-ui-agGrid/lib/krishito-ui-agGrid-model';
+
 
 interface ExpenseRevenue {
   expense: TemplateRef<any>;
