@@ -17,7 +17,7 @@ export { u as a, i as b, d as c, c as d, t as e, f, j as g, a as h };
 @angular/core/fesm2022/_not_found-chunk.mjs:
 @angular/core/fesm2022/primitives-di.mjs:
   (**
-   * @license Angular v22.1.0
+   * @license Angular v22.1.1
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

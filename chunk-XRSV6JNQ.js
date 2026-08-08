@@ -212,7 +212,7 @@ export { y as a, _e as b, L as c, Ne as d, m as e, O as f, fe as g, C as h, Ie a
 @angular/core/fesm2022/_attribute-chunk.mjs:
 @angular/core/fesm2022/primitives-event-dispatch.mjs:
   (**
-   * @license Angular v22.1.0
+   * @license Angular v22.1.1
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

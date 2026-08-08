@@ -177,7 +177,7 @@ export { d as a, p as b, Q as c, W as d, X as e, C as f, w as g, _ as h, y as i,
 @angular/core/fesm2022/_weak_ref-chunk.mjs:
 @angular/core/fesm2022/primitives-signals.mjs:
   (**
-   * @license Angular v22.1.0
+   * @license Angular v22.1.1
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

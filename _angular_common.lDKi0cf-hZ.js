@@ -1,4 +1,4 @@
-import { a as Y, b as K, d as Pt, e as Bt, f as Nt, g as U, h as kt, i as xt, j as $t, k as Ut } from "@nf-internal/chunk-HWOETXFT";
+import { a as Y, b as K, d as Pt, e as Bt, f as Nt, g as U, h as kt, i as xt, j as $t, k as Ut } from "@nf-internal/chunk-445KYOSO";
 import * as b from "@angular/core";
 import { InjectionToken as jt, inject as je, DOCUMENT as zt, \u0275\u0275inject as Vt } from "@angular/core";
 import { Subject as Gt } from "rxjs";
@@ -974,7 +974,7 @@ function Pr(e, i, t) { return gi(e, i, t); }
 var bi = "browser", vi = "server";
 function Br(e) { return e === bi; }
 function Nr(e) { return e === vi; }
-var kr = new Di("22.1.0"), xr = (() => { class e {
+var kr = new Di("22.1.1"), xr = (() => { class e {
     static \u0275prov = pi({ token: e, providedIn: "root", factory: () => typeof ngServerMode < "u" && ngServerMode ? new Oe : new Re(L(Mt), window) });
 } return e; })(), Re = class {
     document;
@@ -1134,7 +1134,7 @@ export { q as APP_BASE_HREF, Yn as AsyncPipe, xt as BrowserPlatformLocation, li 
 @angular/common/fesm2022/_platform_navigation-chunk.mjs:
 @angular/common/fesm2022/common.mjs:
   (**
-   * @license Angular v22.1.0
+   * @license Angular v22.1.1
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)

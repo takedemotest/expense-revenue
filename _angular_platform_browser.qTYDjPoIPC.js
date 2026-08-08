@@ -364,7 +364,7 @@ var Zt = (() => { class n {
     bypassSecurityTrustResourceUrl(e) { return Ft(e); }
     static \u0275fac = function (t) { return new (t || n); };
     static \u0275prov = p.\u0275\u0275defineService({ token: n, factory: n.\u0275fac });
-} return n; })(), Fn = new $t("22.1.0");
+} return n; })(), Fn = new $t("22.1.1");
 export { Ot as BrowserModule, be as By, Pn as CssVarNamespacer, Zt as DomSanitizer, D as EVENT_MANAGER_PLUGINS, k as EventManager, S as EventManagerPlugin, f as HydrationFeatureKind, On as Meta, de as REMOVE_STYLES_ON_COMPONENT_DESTROY, bn as Title, Fn as VERSION, _t as bootstrapApplication, Mt as createApplication, Ln as disableDebugTools, Nn as enableDebugTools, It as platformBrowser, jn as provideClientHydration, et as provideCssVarNamespacing, Rt as provideProtractorTestingSupport, xn as withEventReplay, kn as withHttpTransferCacheOptions, Un as withI18nSupport, Bn as withIncrementalHydration, Hn as withNoHttpTransferCache, Vn as withNoIncrementalHydration, V as \u0275BrowserDomAdapter, j as \u0275BrowserGetTestability, _ as \u0275DomEventsPlugin, B as \u0275DomRendererFactory2, Wt as \u0275DomSanitizerImpl, Se as \u0275KeyEventsPlugin, U as \u0275SharedStylesHost, Yn as \u0275getDOM };
 /*! Bundled license information:
 
@@ -372,7 +372,7 @@ export { Ot as BrowserModule, be as By, Pn as CssVarNamespacer, Zt as DomSanitiz
 @angular/platform-browser/fesm2022/_browser-chunk.mjs:
 @angular/platform-browser/fesm2022/platform-browser.mjs:
   (**
-   * @license Angular v22.1.0
+   * @license Angular v22.1.1
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)
